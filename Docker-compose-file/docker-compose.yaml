@@ -17,6 +17,8 @@ services:
     stdin_open: true
     depends_on:
       - backend
+    labels:
+      kompose.service.type: LoadBalancer
   # App backend service
   backend:
     container_name: routemee-backend
