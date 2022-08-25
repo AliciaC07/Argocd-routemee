@@ -1,17 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-tcp
+  name: routemee-frontend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: frontend-tcp
+      app: routemee-frontend
   template:
     metadata:
       labels:
-        io.kompose.network/red: "true"
-        app: frontend-tcp
+        app: routemee-frontend
     spec:
       containers:
         - env:

@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: routemee-backend
 spec:
+  type: LoadBalancer
   ports:
-    - name: "9000"
-      port: 9000
+    - port: 9000
       targetPort: 9000
   selector:
-    app: backend
+    app: routemee-backend

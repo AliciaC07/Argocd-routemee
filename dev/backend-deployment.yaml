@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: routemee-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: routemee-backend
   template:
     metadata:
       labels:
-        app: backend
+        app: routemee-backend
     spec:
       containers:
         - env:
