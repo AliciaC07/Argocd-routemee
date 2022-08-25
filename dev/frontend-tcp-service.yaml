@@ -11,8 +11,8 @@ metadata:
 spec:
   ports:
     - name: "http"
-      port: 81
-      targetPort: 8080
+      port: 3300
+      targetPort: 3636
   selector:
     io.kompose.service: frontend
   type: LoadBalancer
