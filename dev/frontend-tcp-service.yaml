@@ -11,8 +11,8 @@ metadata:
 spec:
   ports:
     - name: "81"
-      port: 81
-      targetPort: 80
+      port: 80
+      targetPort: 8081
   selector:
     io.kompose.service: frontend
   type: LoadBalancer
