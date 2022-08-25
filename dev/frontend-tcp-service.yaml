@@ -6,7 +6,7 @@ metadata:
     kompose.service.type: LoadBalancer
     kompose.version: 1.26.0 (40646f47)
   labels:
-    io.kompose.service: frontend-tcp
+    io.kompose.service: frontend
   name: frontend-tcp
 spec:
   ports:
