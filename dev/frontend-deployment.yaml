@@ -1,30 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert
-    kompose.service.type: LoadBalancer
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: frontend
-  name: frontend
+  name: frontend-tcp
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      io.kompose.service: frontend
-  strategy: {}
+      app: frontend-tcp
   template:
     metadata:
-      annotations:
-        kompose.cmd: kompose convert
-        kompose.service.type: LoadBalancer
-        kompose.version: 1.26.0 (40646f47)
-      creationTimestamp: null
       labels:
         io.kompose.network/red: "true"
-        io.kompose.service: frontend
+        app: frontend-tcp
     spec:
       containers:
         - env:
@@ -45,4 +32,3 @@ spec:
           resources: {}
           stdin: true
       restartPolicy: Always
-status: {}
