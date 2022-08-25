@@ -12,10 +12,10 @@ spec:
   ports:
     - name: "http"
       port: 80
-      targetPort: 3033
+      targetPort: 8080
     - name: "https"
       port: 443
-      targetPort: 3034
+      targetPort: 8080
   selector:
     io.kompose.service: frontend
   type: LoadBalancer
