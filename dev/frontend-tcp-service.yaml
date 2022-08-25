@@ -10,9 +10,12 @@ metadata:
   name: frontend-tcp
 spec:
   ports:
-    - name: "81"
+    - name: "http"
       port: 80
-      targetPort: 8081
+      targetPort: 3033
+    - name: "https"
+      port: 443
+      targetPort: 3034
   selector:
     io.kompose.service: frontend
   type: LoadBalancer
