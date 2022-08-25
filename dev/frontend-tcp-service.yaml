@@ -10,7 +10,7 @@ metadata:
   name: frontend-tcp
 spec:
   ports:
-    - name: "81"
+    - name: "http"
       port: 81
       targetPort: 8080
   selector:
