@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: backend
-  strategy: {}
   template:
     metadata:
       labels:
@@ -27,4 +26,4 @@ spec:
             - containerPort: 9000
           resources: {}
       restartPolicy: Always
-status: {}
+
