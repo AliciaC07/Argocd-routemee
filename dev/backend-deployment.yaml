@@ -6,11 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: routemee-backend
+      app: routemee
+      tier: backend
+      track: stable
   template:
     metadata:
       labels:
-        app: routemee-backend
+        app: routemee
+        tier: backend
+        track: stable
     spec:
       containers:
         - env:

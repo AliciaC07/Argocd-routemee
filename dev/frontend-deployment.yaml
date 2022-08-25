@@ -6,16 +6,20 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: routemee-frontend
+      app: routemee
+      tier: frontend
+      track: stable
   template:
     metadata:
       labels:
-        app: routemee-frontend
+        app: routemee
+        tier: frontend
+        track: stable
     spec:
       containers:
         - env:
             - name: API_URL
-              value: http://routemee.com:9000
+              value: http://routemee:9000
             - name: APP_PORT
               value: "80"
             - name: CORS
@@ -23,7 +27,7 @@ spec:
             - name: HTTPS_METHOD
               value: noredirect
             - name: URL
-              value: routemee.com
+              value: routemee
           image: waterpolord/routemee-frontend
           name: routemee-frontend
           ports:

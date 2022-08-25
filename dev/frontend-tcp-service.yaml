@@ -13,7 +13,8 @@ spec:
       targetPort: 8080
       nodePort: 31808
   selector:
-    app: routemee-frontend
+    app: routemee
+    tier: frontend
   type: LoadBalancer
 status:
   loadBalancer: {}
