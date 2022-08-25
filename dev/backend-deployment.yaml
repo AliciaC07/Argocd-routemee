@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: backend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: backend
+    spec:
+      containers:
+        - env:
+            - name: APP_PORT
+              value: "9000"
+            - name: DATABASE_NAME
+              value: prueba_perdomo
+            - name: DATABASE_PORT
+              value: "3730"
+          image: waterpolord/routemee-backend
+          name: routemee-backend
+          ports:
+            - containerPort: 9000
+          resources: {}
+      restartPolicy: Always
+status: {}

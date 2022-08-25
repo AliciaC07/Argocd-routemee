@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: LoadBalancer
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.service.type: LoadBalancer
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/red: "true"
+        io.kompose.service: frontend
+    spec:
+      containers:
+        - env:
+            - name: API_URL
+              value: http://routemee.com:9000
+            - name: APP_PORT
+              value: "80"
+            - name: CORS
+              value: "false"
+            - name: HTTPS_METHOD
+              value: noredirect
+            - name: URL
+              value: routemee.com
+          image: waterpolord/routemee-frontend
+          name: routemee-frontend
+          ports:
+            - containerPort: 80
+          resources: {}
+          stdin: true
+      restartPolicy: Always
+status: {}
