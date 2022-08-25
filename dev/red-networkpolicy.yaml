@@ -4,11 +4,8 @@ metadata:
   creationTimestamp: null
   name: red
 spec:
+  podSelector: {}
   ingress:
-    - from:
-        - podSelector:
-            matchLabels:
-              io.kompose.network/red: "true"
-  podSelector:
-    matchLabels:
-      io.kompose.network/red: "true"
+  - {}
+  policyTypes:
+  - Ingress
