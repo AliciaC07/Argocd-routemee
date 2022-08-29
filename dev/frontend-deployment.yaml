@@ -19,7 +19,7 @@ spec:
       containers:
         - env:
             - name: API_URL
-              value: http://routemee.com:9000
+              value: http://routemee
             - name: APP_PORT
               value: "80"
             - name: CORS
