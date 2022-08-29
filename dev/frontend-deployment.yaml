@@ -19,13 +19,13 @@ spec:
       containers:
         - env:
             - name: API_URL
-              value: http://routemee
+              value: "http://routemee"
             - name: APP_PORT
               value: "80"
             - name: CORS
               value: "false"
             - name: URL
-              value: routemee
+              value: "routemee"
           image: waterpolord/routemee-frontend
           name: routemee-frontend
           ports:
